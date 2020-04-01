@@ -33,17 +33,21 @@ class TestFirst:
         # sleep(3)    #直接等待
         self.driver.find_element(By.XPATH, '//*[@id="main-nav-menu"]/ul/li[4]/a').click()
 
-#selenium还提供了一些内置方法，这样我们可以不用自己单独编写方法
+        # selenium还提供了一些内置方法，这样我们可以不用自己单独编写方法
         # expected_conditions.element_to_be_clickable(By.XPATH, '//*[@id="hot_teams"]/div[1]/strong')
-        #element_to_be_clickable 等待直到元素可被点击
-        #presence_of_element_located 等待元素出现
-        #visibility_of_element_located  等待元素可见  等等。。
+        # element_to_be_clickable 等待直到元素可被点击
+        # presence_of_element_located 等待元素出现
+        # visibility_of_element_located  等待元素可见  等等。。
 
-        WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable((By.XPATH, '//*[@id="hot_teams"]/div[1]/strong')))
+        WebDriverWait(self.driver, 10).until(
+            expected_conditions.element_to_be_clickable((By.XPATH, '//*[@id="hot_teams"]/div[1]/strong')))
         self.driver.find_element(By.XPATH, '//*[@title="霍格沃兹测试学院(hogwarts)"]').click()
 
 
-
+# self.driver.find_elements(By.XPATH, '//*[@id="hot_teams"]/div[1]/strong')) >= 1  # 为什么不可以使用element
+'''
+其中element返回的知识指定的一个节点而elements则是返回的是一个列表
+'''
 
 '''
 #until函数的相关信息
