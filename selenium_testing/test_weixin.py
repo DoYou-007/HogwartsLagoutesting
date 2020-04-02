@@ -1,3 +1,7 @@
+'''
+实操企业微信通过cookie跳过登录
+'''
+
 import json
 from typing import List, Dict
 
