@@ -27,6 +27,8 @@ class TestFirst:
 
         WebDriverWait(self.driver, 10).until(wait)   #wait函数使用时不能使用()，否则会当作函数使用处理
         self.driver.find_element(By.XPATH, '//*[@title="霍格沃兹测试学院(hogwarts)"]').click()
+###elements  和element的区别:elements返回的是一个列表其中包含所有的符合要求的对象；而element返回的是一个符合对象的元素
+
 
 # 第一种：使用selenium自带方法
     def test_wait1(self):
