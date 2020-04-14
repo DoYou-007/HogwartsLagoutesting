@@ -27,7 +27,10 @@ class Testfind:
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
         self.driver.implicitly_wait(5)
 
-    # def teardown(self):
+    def teardown(self):
+        self.driver.back()
+        self.driver.back()
+
     #     self.driver.quit()
 
     # 测试搜索点击case:通过id,xpath定位
@@ -53,7 +56,35 @@ class Testfind:
         self.driver.find_element_by_id("com.xueqiu.android:id/search_input_text").send_keys("阿里巴巴")
         self.driver.find_element_by_xpath("//*[@resource-id = 'com.xueqiu.android:id/name' and @text = '阿里巴巴']").click()
         current_price = float(self.driver.find_element_by_id("com.xueqiu.android:id/current_price").text)
-        assert current_price > 200
+        assert current_price < 200
+
+    def test_elements(self):
+        '''
+        打开雪球应用首页
+        定位首页的搜索框
+        判断搜索框是否可见，并查看搜索框的name属性
+        打印搜索框这个元素的左上角坐标喝它的宽高
+        向搜索框输入：alibaba
+        判断阿里巴巴是否可见
+        如果可见则打印搜索成功点击，如果不可见，打印搜索失败
+        :return:
+        '''
+        elements = self.driver.find_element_by_id("com.xueqiu.android:id/tv_search")
+        elements_enable = elements.is_enabled()
+        print(elements.text)
+        print(elements.location)
+        print(elements.size)
+        if elements_enable == True:
+            elements.click()
+            self.driver.find_element_by_id("com.xueqiu.android:id/search_input_text").send_keys("alibaba")
+            element_isable = self.driver.find_element_by_xpath(
+                "//*[@resource-id = 'com.xueqiu.android:id/name' and @text = '阿里巴巴']")
+            element_display = element_isable.get_attribute('displayed')
+            print(element_display)
+            if element_display == 'true':
+                print("搜索成功")
+            else:
+                print("搜索失败")
 
 
 if __name__ == "__main__":
