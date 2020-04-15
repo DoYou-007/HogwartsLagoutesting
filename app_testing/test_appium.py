@@ -3,10 +3,12 @@ from time import sleep
 import pytest
 from appium import webdriver
 
-
 # "noReset": True,  :为了不然每次的activity都重启一遍，在已有的activity上运行
 # "unicodeKeyBoard": 'true', ：替换为中文的输入方式
 # "resetKeyBoard": "true" ：重置输入法
+from appium.webdriver.common.touch_action import TouchAction
+
+
 class Testfind:
     # 初始化用例，设置capbility参数，设置隐式等待时间
     def setup(self):
@@ -85,6 +87,21 @@ class Testfind:
                 print("搜索成功")
             else:
                 print("搜索失败")
+
+    def test_touchaction(self):
+        action = TouchAction(self.driver)
+        action.press(x=643, y=2057).wait(2000).move_to(x=643, y=682).wait(2000).release().perform()
+
+    # 第二中方法（较常用）
+    def test_touchaction2(self):
+        action = TouchAction(self.driver)
+        windows_rect = self.driver.get_window_rect()
+        width = windows_rect['width']
+        height = windows_rect['height']
+        x1 = int(width / 2)
+        y_start = int(height * 4 / 5)
+        y_end = int(height * 1 / 5)
+        action.press(x=x1, y=y_start).wait(2000).move_to(x=x1, y=y_end).wait(2000).release().perform()
 
 
 if __name__ == "__main__":
