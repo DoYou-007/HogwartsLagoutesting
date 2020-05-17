@@ -9,8 +9,8 @@ class TestTouchAction:
     def setup(self):
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
-        desired_caps['platformVersion'] = '10'
-        desired_caps['deviceName'] = 'ec76ef18'
+        #desired_caps['platformVersion'] = '10'
+        desired_caps['deviceName'] = '127.0.0.1:7555'
         desired_caps['appPackage'] = 'com.xueqiu.android'
         desired_caps['appActivity'] = 'com.xueqiu.android.view.WelcomeActivityAlias'
         desired_caps["noReset"] = 'true'
@@ -57,3 +57,18 @@ class TestTouchAction:
                 print("搜索成功")
             else:
                 print("搜索失败")
+
+##高级定位技巧
+    def test_get_current(self):
+        '''
+        打开雪球APP
+        搜索alibaba
+        从搜素结果查找、阿里巴巴的价格
+        :return:
+        '''
+        self.driver.find_element_by_id("com.xueqiu.android:id/tv_search").click()
+        self.driver.find_element_by_id("com.xueqiu.android:id/search_input_text").send_keys("alibaba")
+        self.driver.find_element_by_xpath(
+            "//*[@resource-id = 'com.xueqiu.android:id/name' and @text = '阿里巴巴']")
+        get_current = self.driver.find_element_by_xpath('//*[@text="BABA"]/../../..//*[@resource-id="com.xueqiu.android:id/current_price"]').text
+        assert float(get_current) > 200
