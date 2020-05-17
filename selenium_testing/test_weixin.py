@@ -1,5 +1,7 @@
 '''
 实操企业微信通过cookie跳过登录
+1.首先需要先get到访问的地址后在写入cookie信息
+2.
 '''
 
 import json
@@ -11,7 +13,7 @@ from selenium import webdriver
 class Testdemo:
     def setup_method(self):
         chrome_opts = webdriver.ChromeOptions()
-        chrome_opts.debugging_address = '127.0.0.1:9222'
+        chrome_opts.debugger_address = '127.0.0.1:9222'
         self.driver = webdriver.Chrome()
         self.driver.get("https://work.weixin.qq.com/")
         self.driver.implicitly_wait(3)
@@ -28,6 +30,6 @@ class Testdemo:
         for cookie in cookies:  # 解决expiry无法识别的问题，但是这里没有理解为什么知道处理的是这个字段
             if "expiry" in cookie.keys():
                 cookie.pop("expiry")
-            self.driver.add_cookie(cookies)
+            self.driver.add_cookie(cookie)
         self.driver.get("https://work.weixin.qq.com/wework_admin/frame")
         self.driver.find_element_by_xpath("//*[@id='_hmt_click']/div[1]/div[4]/div[2]/a[3]/div/span[2]").click()
