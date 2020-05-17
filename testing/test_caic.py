@@ -2,6 +2,8 @@
 import sys
 import unittest
 
+import pytest
+
 sys.path.append('..')
 print(sys.path)
 from python.caic import Caic
