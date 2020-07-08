@@ -70,5 +70,18 @@ class TestTouchAction:
         self.driver.find_element_by_id("com.xueqiu.android:id/search_input_text").send_keys("alibaba")
         self.driver.find_element_by_xpath(
             "//*[@resource-id = 'com.xueqiu.android:id/name' and @text = '阿里巴巴']")
-        get_current = self.driver.find_element_by_xpath('//*[@text="BABA"]/../../..//*[@resource-id="com.xueqiu.android:id/current_price"]').text
+        get_current = self.driver.find_element_by_xpath(
+            '//*[@text="BABA"]/../../..//*[@resource-id="com.xueqiu.android:id/current_price"]').text
         assert float(get_current) > 200
+
+        # 使用uiautomator定位
+
+    def test_uiautomator(self):
+        '''
+        点击我的，进入到个人信息页面
+        点击登录，进入到登录页面
+        输入用户名密码
+        点击登录
+        :return:
+        '''
+        self.driver.find_element_by_android_uiautomator('new UiSelector().')
