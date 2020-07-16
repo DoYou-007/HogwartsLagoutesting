@@ -40,14 +40,21 @@ Requests 会自动为你解码 gzip 和 deflate 传输编码的响应数据。
 # print(r.status_code)
 
 """原始响应内容："""
-print('- '*100)
-r = requests.get("http://httpbin.org/events",stream=True)
-print(r.raw)
-print(r.raw.read().decode('utf-8'))
+# print('- '*100)
+# r = requests.get("http://httpbin.org/events",stream=True)
+# print(r.raw)
+# print(r.raw.read().decode('utf-8'))
 
    #但一般情况下，你应该使用下面的模式将文本流保存到文件
-r = requests.get("http://httpbin.org/events",stream=True)
-with open('req_test.txt','wb') as fd :
-    for chunk in r.iter_content(chunk_size=4):
-        fd.write(chunk)
+# r = requests.get("http://httpbin.org/events",stream=True)
+# with open('req_test.txt','wb') as fd :
+#     for chunk in r.iter_content(chunk_size=4):
+#         fd.write(chunk)
 
+""" 定制请求头 """
+url = 'https://api.github.com/some/endpoint'
+headers = {'user-agent':'my-app/0.01'}
+r1 = requests.get(url,headers=headers)
+r2 = requests.get(url)
+print(r1)
+print(r2)
