@@ -14,4 +14,4 @@ class Main(Base_Page):
         self.find(By.ID,'post_status').click()
         self.find(By.ID, 'home_search').click()
         
-        
+    

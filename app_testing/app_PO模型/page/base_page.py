@@ -27,7 +27,7 @@ class Base_Page:
                     break
             return self.find(locator,value)
         
-        
+    
 
 
     #封装自己click方法
