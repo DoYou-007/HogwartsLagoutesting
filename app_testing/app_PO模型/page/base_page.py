@@ -26,6 +26,8 @@ class Base_Page:
                     elements[0].click()
                     break
             return self.find(locator,value)
+        
+        
 
 
     #封装自己click方法

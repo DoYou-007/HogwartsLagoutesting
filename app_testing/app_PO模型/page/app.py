@@ -38,3 +38,5 @@ class APP(Base_Page):
     #定义进入起始页
     def main(self):
         return Main(self._drviver)
+    
+    

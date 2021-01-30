@@ -13,3 +13,5 @@ class Main(Base_Page):
     def goto_windows(self):
         self.find(By.ID,'post_status').click()
         self.find(By.ID, 'home_search').click()
+        
+        

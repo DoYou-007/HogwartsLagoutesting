@@ -28,3 +28,5 @@ class TestMain(TestBase):
 
         # 对app启动处理后的调用
         self.app.start_app().main().goto_windows()
+        
+        
