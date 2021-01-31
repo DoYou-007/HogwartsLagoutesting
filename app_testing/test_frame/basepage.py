@@ -41,14 +41,20 @@ class BasePage:
     def find_and_get_text(self, locator):
         return self.find(locator).text
 
+    #添加配置驱动方法
     def get_steps(self,path,pages):
+        #读取yaml中的测试步骤
         with open(path, 'r' , encoding='utf-8') as f:
             data = yaml.load(f)
+        #获取不同操作的测试步骤
         steps = data[pages]
+        #可能存在多个步骤，一一进行操作
         for step in steps:
             action = step['action']
+            #执行查找元素并点击
             if 'find_and_click' == action:
                 self.find_and_click(step['locator'])
+            #执行输入文本操作
             elif 'send' == action:
                 self.send(step['locator'],step['send_values'])
 
