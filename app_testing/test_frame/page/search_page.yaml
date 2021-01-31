@@ -1,0 +1,7 @@
+search_alibaba:
+  - action: send
+    locator: [id, 'search_input_text']
+    send_values: alibaba
+
+  - action: find_and_click
+    locator: [xpath,'//*[@resource-id="com.xueqiu.android:id/listview"]/android.widget.RelativeLayout[2]']

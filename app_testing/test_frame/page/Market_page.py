@@ -6,5 +6,8 @@ from HogwartsLagoutesting.app_testing.test_frame.page.search_page import SearchP
 
 class MarketPage(BasePage):
     def goto_search(self):
-        self.find_and_click((By.XPATH,'//*[@resource-id="com.xueqiu.android:id/action_search"]'))
+        # 注意使用绝对路径
+        self.get_steps("../page/market_page.yaml",'goto_search')
+
+        # self.find_and_click((By.XPATH,'//*[@resource-id="com.xueqiu.android:id/action_search"]'))
         return SearchPage(self.driver)

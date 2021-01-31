@@ -6,6 +6,15 @@ from HogwartsLagoutesting.app_testing.test_frame.basepage import BasePage
 
 class MainPage(BasePage):
     def goto_Marketpage(self):
-        self.find_and_click((By.ID, "post_status"))
-        self.find_and_click((By.XPATH, "//*[@text='行情']"))
+        # 注意使用绝对路径
+        self.get_steps("../page/main_page.yaml",'goto_Marketpage')
+
+        # self.find_and_click((By.ID, "post_status"))
+        # self.find_and_click((By.XPATH, "//*[@text='行情']"))
         return MarketPage(self.driver)
+
+
+    def goto_mine(self):
+        self.get_steps("../page/main_page.yaml", 'goto_mine')
+
+        # self.find_and_click((By.XPATH, "//*[@text='我的']"))
