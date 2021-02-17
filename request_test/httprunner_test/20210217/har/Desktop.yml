@@ -1,0 +1,433 @@
+config:
+    name: testcase description
+    variables: {}
+    verify: false
+teststeps:
+-   name: /
+    request:
+        cookies:
+            Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504: '1613574348'
+            Hm_lvt_4426cbb0486a79ea049b4ad52d81b504: '1613573651'
+            SESSION: 4d0c2b0e-e5b3-46fa-81e2-ccb2ca3d37dc
+            SLARDAR_WEB_ID: 25c7e79c-7fba-41bd-8b7a-6ff2477c0948
+            _ga: GA1.2.683848690.1613573651
+            _gat: '1'
+            _gid: GA1.2.571932045.1613573651
+            country: US
+            csrf_token: 891a2444-4483-4882-947f-d193970bd7d4
+            data_unique_id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            language: en-US
+            reg_entrance: https%3A%2F%2Fmubu.com%2Fapps
+            reg_focusId: d2b68872-6373-48b0-bfd7-177b07d1678
+            reg_from: https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DSk2ayR2eBy-dWAxaxlU_Fri2bQ1nEonI7u01IMRRQbW%26wd%3D%26eqid%3Df4ef02d700702e7c00000004602d2e07
+            reg_prepareId: 177b07d11a2-177b07d1198-48b0-bfd7-1ed352fd5eeb
+        headers:
+            accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            sec-fetch-dest: document
+            sec-fetch-mode: navigate
+            sec-fetch-site: none
+            sec-fetch-user: ?1
+            upgrade-insecure-requests: '1'
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+        method: GET
+        url: https://mubu.com/
+    validate:
+    -   eq:
+        - status_code
+        - 200
+-   name: /login
+    request:
+        cookies:
+            Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504: '1613574348'
+            Hm_lvt_4426cbb0486a79ea049b4ad52d81b504: '1613573651'
+            SESSION: 4d0c2b0e-e5b3-46fa-81e2-ccb2ca3d37dc
+            SLARDAR_WEB_ID: 25c7e79c-7fba-41bd-8b7a-6ff2477c0948
+            _ga: GA1.2.683848690.1613573651
+            _gat: '1'
+            _gid: GA1.2.571932045.1613573651
+            country: US
+            csrf_token: 891a2444-4483-4882-947f-d193970bd7d4
+            data_unique_id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            language: en-US
+            reg_entrance: https%3A%2F%2Fmubu.com%2Fapps
+            reg_focusId: d2b68872-6373-48b0-bfd7-177b07d1678
+            reg_from: https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DSk2ayR2eBy-dWAxaxlU_Fri2bQ1nEonI7u01IMRRQbW%26wd%3D%26eqid%3Df4ef02d700702e7c00000004602d2e07
+            reg_prepareId: 177b07d11a2-177b07d1198-48b0-bfd7-1ed352fd5eeb
+        headers:
+            accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            referer: https://mubu.com/
+            sec-fetch-dest: document
+            sec-fetch-mode: navigate
+            sec-fetch-site: same-origin
+            sec-fetch-user: ?1
+            upgrade-insecure-requests: '1'
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+        method: GET
+        url: https://mubu.com/login
+    validate:
+    -   eq:
+        - status_code
+        - 200
+-   name: /login/password
+    request:
+        cookies:
+            Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504: '1613574370'
+            Hm_lvt_4426cbb0486a79ea049b4ad52d81b504: '1613573651'
+            SESSION: 4d0c2b0e-e5b3-46fa-81e2-ccb2ca3d37dc
+            SLARDAR_WEB_ID: 326ccef8-f601-4340-b32f-6f679df1405a
+            _ga: GA1.2.683848690.1613573651
+            _gat: '1'
+            _gid: GA1.2.571932045.1613573651
+            country: US
+            csrf_token: 891a2444-4483-4882-947f-d193970bd7d4
+            data_unique_id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            language: en-US
+            reg_entrance: https%3A%2F%2Fmubu.com%2Fapps
+            reg_focusId: 97607fb1-2902-40b2-8524-177b086f624
+            reg_from: https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DSk2ayR2eBy-dWAxaxlU_Fri2bQ1nEonI7u01IMRRQbW%26wd%3D%26eqid%3Df4ef02d700702e7c00000004602d2e07
+            reg_prepareId: 177b086f0e3-177b086f0c9-40b2-8524-d321ae45d34e
+        headers:
+            accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            referer: https://mubu.com/login
+            sec-fetch-dest: document
+            sec-fetch-mode: navigate
+            sec-fetch-site: same-origin
+            sec-fetch-user: ?1
+            upgrade-insecure-requests: '1'
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+        method: GET
+        url: https://mubu.com/login/password
+    validate:
+    -   eq:
+        - status_code
+        - 200
+-   name: /api/login/submit
+    request:
+        cookies:
+            Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504: '1613574371'
+            Hm_lvt_4426cbb0486a79ea049b4ad52d81b504: '1613573651'
+            SESSION: 4d0c2b0e-e5b3-46fa-81e2-ccb2ca3d37dc
+            SLARDAR_WEB_ID: 56d77735-ec0e-4be9-ad2b-0095d82e64dc
+            _ga: GA1.2.683848690.1613573651
+            _gat: '1'
+            _gid: GA1.2.571932045.1613573651
+            country: US
+            csrf_token: 891a2444-4483-4882-947f-d193970bd7d4
+            data_unique_id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            language: en-US
+            reg_entrance: https%3A%2F%2Fmubu.com%2Fapps
+            reg_focusId: 97607fb1-2902-40b2-8524-177b086f624
+            reg_from: https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DSk2ayR2eBy-dWAxaxlU_Fri2bQ1nEonI7u01IMRRQbW%26wd%3D%26eqid%3Df4ef02d700702e7c00000004602d2e07
+            reg_prepareId: 177b086f0e3-177b086f0c9-40b2-8524-d321ae45d34e
+        data:
+            password: ying775825
+            phone: '15070711714'
+            remember: 'true'
+        headers:
+            accept: application/json, text/javascript, */*; q=0.01
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            content-length: '51'
+            content-type: application/x-www-form-urlencoded; charset=UTF-8
+            origin: https://mubu.com
+            referer: https://mubu.com/login/password
+            sec-fetch-dest: empty
+            sec-fetch-mode: cors
+            sec-fetch-site: same-origin
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+            x-requested-with: XMLHttpRequest
+        method: POST
+        url: https://mubu.com/api/login/submit
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+    -   eq:
+        - body.msg
+        - null
+-   name: /app
+    request:
+        cookies:
+            Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504: '1613574371'
+            Hm_lvt_4426cbb0486a79ea049b4ad52d81b504: '1613573651'
+            Jwt-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMjI0Mzk1NSIsImV4cCI6MTYxNjE2NjM3OCwiaWF0IjoxNjEzNTc0Mzc4fQ.Ok3Qi0Q2NgeTdpQw17sbrwpxAx_TSkxuUB26QeYJyvRrGE5LvXq6WNxm7yH9lyYmA_35CZhyOfB6TH-reBsHbA
+            SESSION: 4d0c2b0e-e5b3-46fa-81e2-ccb2ca3d37dc
+            SLARDAR_WEB_ID: 56d77735-ec0e-4be9-ad2b-0095d82e64dc
+            _ga: GA1.2.683848690.1613573651
+            _gat: '1'
+            _gid: GA1.2.571932045.1613573651
+            country: US
+            csrf_token: 891a2444-4483-4882-947f-d193970bd7d4
+            data_unique_id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            language: en-US
+            reg_entrance: https%3A%2F%2Fmubu.com%2Fapps
+            reg_focusId: 97607fb1-2902-40b2-8524-177b086f624
+            reg_from: https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DSk2ayR2eBy-dWAxaxlU_Fri2bQ1nEonI7u01IMRRQbW%26wd%3D%26eqid%3Df4ef02d700702e7c00000004602d2e07
+            reg_prepareId: 177b086f0e3-177b086f0c9-40b2-8524-d321ae45d34e
+            user_persistence: ''
+        headers:
+            accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            referer: https://mubu.com/login/password
+            sec-fetch-dest: document
+            sec-fetch-mode: navigate
+            sec-fetch-site: same-origin
+            sec-fetch-user: ?1
+            upgrade-insecure-requests: '1'
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+        method: GET
+        url: https://mubu.com/app
+    validate:
+    -   eq:
+        - status_code
+        - 200
+-   name: /v3/
+    request:
+        cookies:
+            Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504: '1613574371'
+            Hm_lvt_4426cbb0486a79ea049b4ad52d81b504: '1613573651'
+            SLARDAR_WEB_ID: 3f05102a-ee46-41c7-a113-342dfb67f237
+            _ga: GA1.2.683848690.1613573651
+            _gat: '1'
+            _gat_UA-77727571-3: '1'
+            _gid: GA1.2.571932045.1613573651
+        headers:
+            accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            referer: https://mubu.com/
+            sec-fetch-dest: image
+            sec-fetch-mode: no-cors
+            sec-fetch-site: same-site
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+        method: GET
+        url: https://api2.mubu.com/v3/
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 17
+    -   eq:
+        - body.msg
+        - illegal request
+-   name: /v3/api/message/get_message_unread
+    request:
+        headers:
+            accept: application/json, text/plain, */*
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            content-length: '10'
+            content-type: application/json;charset=UTF-8
+            data-unique-id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMjI0Mzk1NSIsImV4cCI6MTYxNjE2NjM3OCwiaWF0IjoxNjEzNTc0Mzc4fQ.Ok3Qi0Q2NgeTdpQw17sbrwpxAx_TSkxuUB26QeYJyvRrGE5LvXq6WNxm7yH9lyYmA_35CZhyOfB6TH-reBsHbA
+            origin: https://mubu.com
+            referer: https://mubu.com/
+            sec-fetch-dest: empty
+            sec-fetch-mode: cors
+            sec-fetch-site: same-site
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+            version: 3.0.0
+            x-request-id: b4e13765-fad6-4fa3-af2f-5194af71254f
+        json:
+            page: 1
+        method: POST
+        url: https://api2.mubu.com/v3/api/message/get_message_unread
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+-   name: /v3/api/list/star_relation/get
+    request:
+        headers:
+            accept: application/json, text/plain, */*
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            data-unique-id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMjI0Mzk1NSIsImV4cCI6MTYxNjE2NjM3OCwiaWF0IjoxNjEzNTc0Mzc4fQ.Ok3Qi0Q2NgeTdpQw17sbrwpxAx_TSkxuUB26QeYJyvRrGE5LvXq6WNxm7yH9lyYmA_35CZhyOfB6TH-reBsHbA
+            origin: https://mubu.com
+            referer: https://mubu.com/
+            sec-fetch-dest: empty
+            sec-fetch-mode: cors
+            sec-fetch-site: same-site
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+            version: 3.0.0
+            x-request-id: f2309eeb-2626-492a-8463-ad5683eee532
+        method: GET
+        url: https://api2.mubu.com/v3/api/list/star_relation/get
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+-   name: /v3/api/user/profile
+    request:
+        data: ''
+        headers:
+            accept: application/json, text/plain, */*
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            content-length: '0'
+            data-unique-id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMjI0Mzk1NSIsImV4cCI6MTYxNjE2NjM3OCwiaWF0IjoxNjEzNTc0Mzc4fQ.Ok3Qi0Q2NgeTdpQw17sbrwpxAx_TSkxuUB26QeYJyvRrGE5LvXq6WNxm7yH9lyYmA_35CZhyOfB6TH-reBsHbA
+            origin: https://mubu.com
+            referer: https://mubu.com/
+            sec-fetch-dest: empty
+            sec-fetch-mode: cors
+            sec-fetch-site: same-site
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+            version: 3.0.0
+            x-request-id: 9a5f853f-43b0-431a-9825-7ed9f2b77e0c
+        method: POST
+        url: https://api2.mubu.com/v3/api/user/profile
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+-   name: /v3/api/list/get_all_documents_page
+    request:
+        headers:
+            accept: application/json, text/plain, */*
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            content-length: '12'
+            content-type: application/json;charset=UTF-8
+            data-unique-id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMjI0Mzk1NSIsImV4cCI6MTYxNjE2NjM3OCwiaWF0IjoxNjEzNTc0Mzc4fQ.Ok3Qi0Q2NgeTdpQw17sbrwpxAx_TSkxuUB26QeYJyvRrGE5LvXq6WNxm7yH9lyYmA_35CZhyOfB6TH-reBsHbA
+            origin: https://mubu.com
+            referer: https://mubu.com/
+            sec-fetch-dest: empty
+            sec-fetch-mode: cors
+            sec-fetch-site: same-site
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+            version: 3.0.0
+            x-request-id: 4eb94d41-fbd7-4141-ab81-838ac3209852
+        json:
+            start: ''
+        method: POST
+        url: https://api2.mubu.com/v3/api/list/get_all_documents_page
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+-   name: /v3/api/user/get_user_params
+    request:
+        data: ''
+        headers:
+            accept: application/json, text/plain, */*
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            content-length: '0'
+            data-unique-id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMjI0Mzk1NSIsImV4cCI6MTYxNjE2NjM3OCwiaWF0IjoxNjEzNTc0Mzc4fQ.Ok3Qi0Q2NgeTdpQw17sbrwpxAx_TSkxuUB26QeYJyvRrGE5LvXq6WNxm7yH9lyYmA_35CZhyOfB6TH-reBsHbA
+            origin: https://mubu.com
+            referer: https://mubu.com/
+            sec-fetch-dest: empty
+            sec-fetch-mode: cors
+            sec-fetch-site: same-site
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+            version: 3.0.0
+            x-request-id: 0b4a0bef-24f1-4af1-9afe-845fb9b350eb
+        method: POST
+        url: https://api2.mubu.com/v3/api/user/get_user_params
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+-   name: /v3/api/advertisement/get
+    request:
+        headers:
+            accept: application/json, text/plain, */*
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            content-length: '10'
+            content-type: application/json;charset=UTF-8
+            data-unique-id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMjI0Mzk1NSIsImV4cCI6MTYxNjE2NjM3OCwiaWF0IjoxNjEzNTc0Mzc4fQ.Ok3Qi0Q2NgeTdpQw17sbrwpxAx_TSkxuUB26QeYJyvRrGE5LvXq6WNxm7yH9lyYmA_35CZhyOfB6TH-reBsHbA
+            origin: https://mubu.com
+            referer: https://mubu.com/
+            sec-fetch-dest: empty
+            sec-fetch-mode: cors
+            sec-fetch-site: same-site
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+            version: 3.0.0
+            x-request-id: 116ce2ba-0a58-4c5e-bf87-938f6b33e690
+        json:
+            type: 1
+        method: POST
+        url: https://api2.mubu.com/v3/api/advertisement/get
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+-   name: /v3/api/list/item_count
+    request:
+        headers:
+            accept: application/json, text/plain, */*
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+            content-length: '30'
+            content-type: application/json;charset=UTF-8
+            data-unique-id: d70f383c-a291-4bba-9e42-5ef5e152d9dd
+            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMjI0Mzk1NSIsImV4cCI6MTYxNjE2NjM3OCwiaWF0IjoxNjEzNTc0Mzc4fQ.Ok3Qi0Q2NgeTdpQw17sbrwpxAx_TSkxuUB26QeYJyvRrGE5LvXq6WNxm7yH9lyYmA_35CZhyOfB6TH-reBsHbA
+            origin: https://mubu.com
+            referer: https://mubu.com/
+            sec-fetch-dest: empty
+            sec-fetch-mode: cors
+            sec-fetch-site: same-site
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/90.0.4412.3 Safari/537.36
+            version: 3.0.0
+            x-request-id: bcc452cf-fc71-4beb-9b23-48de106c6e9e
+        json:
+            folderId: 0
+            source: home
+        method: POST
+        url: https://api2.mubu.com/v3/api/list/item_count
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
