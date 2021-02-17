@@ -1,0 +1,4 @@
+default: test
+stage :
+  dev : 0.0.0.0:9998
+  test : 0.0.0.0:9999
