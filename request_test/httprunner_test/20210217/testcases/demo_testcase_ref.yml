@@ -1,6 +1,8 @@
 
 config:
     name: "request methods testcase: reference testcase"
+    parameters:
+        index: [1,3]
     variables:
         foo1: testsuite_config_bar1
         expect_foo1: testsuite_config_bar1

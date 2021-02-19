@@ -9,7 +9,11 @@ from testcases.mubu_login_test import TestCaseMubuLogin as mubulogin
 
 
 class TestCaseMubuCreatDoc(HttpRunner):
-    @pytest.mark.parametrize("param", Parameters({"doctitle": [1,2,3]}))
+    @pytest.mark.parametrize("param", Parameters(
+        {
+            "doctitle": [1,2],
+            'phone-passward':"${parameterize(data/phone_password.csv)}"
+         }))
     def test_start(self, param):
         super().test_start(param)
 
