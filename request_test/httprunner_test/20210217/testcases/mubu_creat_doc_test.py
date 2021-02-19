@@ -9,7 +9,7 @@ from testcases.mubu_login_test import TestCaseMubuLogin as mubulogin
 
 
 class TestCaseMubuCreatDoc(HttpRunner):
-    @pytest.mark.parametrize("param", Parameters({"title": ['demo1', 'demo2']}))
+    @pytest.mark.parametrize("param", Parameters({"doctitle": [1,2,3]}))
     def test_start(self, param):
         super().test_start(param)
 
@@ -18,7 +18,7 @@ class TestCaseMubuCreatDoc(HttpRunner):
             {
                 "host": "mubu.com",
                 "memberID":6049083342292386,
-                "title":"${gen_random_title()}"
+                "doctitle":"${gen_random_title()}"
             })\
         .base_url("https://${host}")\
         .verify(False)
@@ -26,7 +26,7 @@ class TestCaseMubuCreatDoc(HttpRunner):
     teststeps = [
         Step( RunTestCase("mubu login")
               .call(mubulogin)
-              .export('JwtToken',"title")
+              .export('JwtToken',"doctitle")
 
         ),
         Step(
@@ -660,7 +660,7 @@ class TestCaseMubuCreatDoc(HttpRunner):
                                 {"name": "nameChanged", "title": "tw", "original": "t"},
                                 {
                                     "name": "nameChanged",
-                                    "title": "${title}",
+                                    "title": "${doctitle}",
                                     "original": "tw",
                                 },
                             ],
