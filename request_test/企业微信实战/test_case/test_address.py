@@ -1,3 +1,5 @@
+#_*_ coding: UTF-8 _*_
+
 import pytest
 from test_case.adress import Adress
 
@@ -8,7 +10,7 @@ class TestAdress:
     @pytest.mark.parametrize('name,userid,mobile',[('阿伯21','helo12',13800000921),
                                                    ('阿伯23','helo13',13800000931),
                                                    ('阿伯25','helo14',13800000941)])
-    def test_add_member(self,name,userid,mobile):
+    def test_add_member(self,name:str,userid,mobile):
         department = [1]
         #数据清理
         self.Adress.delete_member(userid)
