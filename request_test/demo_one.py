@@ -45,15 +45,23 @@ class TestDemo():
         headers = {'user_agent':'my_app-0.01'}
         r = requests.get('https://httpbin.org/get',headers = headers)
         text = eval(r.text)
+        print(text)
+        # print("json对应的值",r.json())
         print(type(text),text['headers']['User-Agent'])
-        assert  text['headers']['User-Agent'] == 'python-requests/2.25.0,my_app-0.01'
+        assert  text['headers']['User-Agent'] == 'python-requests/2.28.1,my_app-0.01'
+        #通过r.json()的方式进行判断
+        assert r.json()['headers']['Host'] == 'httpbin.org'
 
+
+    def test_cookies(self):
         #cookies
-        # cookies = dict(cookie_value = 'my_self')
-        # r = requests.get('https://httpbin.org/get',cookies = cookies)
-        # print(r.headers)
-        # text= eval(r.text)
-        # print(type(text),text['headers']['Cookie'])
+        cookies = dict(cookie_value = 'my_self')
+        r = requests.get('https://httpbin.org/get',cookies = cookies)
+        print(r.headers)
+        text= eval(r.text)
+        print("text的值：",text)
+        print(type(text),text['headers']['Cookie'],type(text['headers']['Cookie']))
+        assert text['headers']['Cookie'] == 'cookie_value=my_self'
 
 # 接口请求构造get/post/put/head：文件上传 (将返回class类型转换成字典的形式，可以用json_load的方法)
     def test_putfiel(self):
